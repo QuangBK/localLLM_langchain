@@ -13,7 +13,7 @@ class AlpacaLLM(LLM):
 
     def _call(self, prompt: str, stop: Optional[List[str]] = None) -> str:
         if isinstance(stop, list):
-            stop = stop + ["\n###","\nObservation:"]
+            stop = stop + ["\n###","\nObservation:", "\nObservations:"]
 
         response = requests.post(
             URI,
